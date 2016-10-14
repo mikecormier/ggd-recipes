@@ -23,6 +23,7 @@ export PATH=/anaconda/bin:$PATH
 conda install -y conda-build
 conda update -y conda
 conda config --add channels bioconda
+conda config --add channels ggd-alpha
 conda config --add channels conda-forge
 conda install -y conda-build-all --channel conda-forge
 conda install -y conda-build anaconda-client
