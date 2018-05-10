@@ -25,10 +25,10 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
-conda-build-all \
-	--inspect-channels=ggd-alpha \
-	--artefact-directory $CHECK_DIR \
-	recipes/
+for recipe in recipes/*/*/
+do
+    conda build $recipe
+done
 
 echo "############################################################"
 echo "############################################################"
