@@ -25,7 +25,20 @@ rmbuild() {
 }
 trap rmbuild EXIT
 
-bioconda-utils build recipes/
+## Test recipes using bioconda-utils (modified from https://github.com/bioconda/bioconda-recipes/blob/master/scripts/travis-run.sh)
+## bioconda-utils build (biconda-utils/utils.py get_recipes only supports two levels of nesting. !!Checking if the bicondoa team can change this!!)
+##  Therefore, in order to test all recieps we have to run each species/build seperately 
+# Homo-sapien
+bioconda-utils build recipes/Homo_sapiens/GRCh37/ config.yaml 
+bioconda-utils build recipes/Homo_sapiens/hg19/ config.yaml #--loglevel info
+bioconda-utils build recipes/Homo_sapiens/hg38-noalt/ config.yaml #--loglevel info
+bioconda-utils build recipes/Homo_sapiens/hg38/ config.yaml #--loglevel info
+# Mus_musculus
+bioconda-utils build recipes/Mus_musculus/mm10/ config.yaml #--loglevel info
+# Canis_familiaris
+bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml #--loglevel info 
+
+
 
 echo "############################################################"
 echo "############################################################"
@@ -50,7 +63,8 @@ for bz2 in $CHECK_DIR/*.bz2; do
 
 	# upload
 	set +o nounset
-	if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
+	#if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
+	if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
 		if [[ "$ANACONDA_GGD_TOKEN" == "" ]]; then
 			echo "\n> WARNING:"
 			echo '> $ANACONDA_GGD_TOKEN not set'
