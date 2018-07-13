@@ -11,7 +11,7 @@ extra:
   genome-build: GRCh37
   keywords:
   - ref
-  - referance
+  - reference
   species: Homo_sapiens
 package:
   name: grch37-reference-genome
