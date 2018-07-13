@@ -64,7 +64,8 @@ for bz2 in $CHECK_DIR/*.bz2; do
 	# upload
 	set +o nounset
 	#if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
-	if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
+	#if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
+	if [[ "true" ]]; then
 		if [[ "$ANACONDA_GGD_TOKEN" == "" ]]; then
 			echo "\n> WARNING:"
 			echo '> $ANACONDA_GGD_TOKEN not set'
