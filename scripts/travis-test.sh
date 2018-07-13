@@ -30,13 +30,13 @@ trap rmbuild EXIT
 ##  Therefore, in order to test all recieps we have to run each species/build seperately 
 # Homo-sapien
 bioconda-utils build recipes/Homo_sapiens/GRCh37/ config.yaml 
-bioconda-utils build recipes/Homo_sapiens/hg19/ config.yaml #--loglevel info
-bioconda-utils build recipes/Homo_sapiens/hg38-noalt/ config.yaml #--loglevel info
-bioconda-utils build recipes/Homo_sapiens/hg38/ config.yaml #--loglevel info
+#bioconda-utils build recipes/Homo_sapiens/hg19/ config.yaml 
+#bioconda-utils build recipes/Homo_sapiens/hg38-noalt/ config.yaml 
+#bioconda-utils build recipes/Homo_sapiens/hg38/ config.yaml 
 # Mus_musculus
-bioconda-utils build recipes/Mus_musculus/mm10/ config.yaml #--loglevel info
+#bioconda-utils build recipes/Mus_musculus/mm10/ config.yaml 
 # Canis_familiaris
-bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml #--loglevel info 
+#bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml  
 
 
 
