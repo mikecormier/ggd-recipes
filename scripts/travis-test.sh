@@ -39,6 +39,7 @@ bioconda-utils build recipes/Homo_sapiens/GRCh37/ config.yaml --loglevel debug
 #bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml  
 
 
+find / "grch37-reference-genome-1-h9b5635b_1.tar.bz2" | grep "grch37-reference-genome-1-h9b5635b_1.tar.bz2"
 
 echo "############################################################"
 echo "############################################################"
