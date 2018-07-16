@@ -38,16 +38,15 @@ bioconda-utils build recipes/Homo_sapiens/GRCh37/ config.yaml --loglevel debug
 # Canis_familiaris
 #bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml  
 
-
-find / "grch37-reference-genome-1-h9b5635b_1.tar.bz2" | grep "grch37-reference-genome-1-h9b5635b_1.tar.bz2"
+ls /anaconda/conda-bld/noarch/
+pwd $CHECK_DIR
+ls $CHECK_DIR
 
 echo "############################################################"
 echo "############################################################"
 echo "Checked Dependencies"
 echo "############################################################"
 echo "############################################################"
-
-ls $CHECK_DIR
 
 for bz2 in $CHECK_DIR/*.bz2; do
 	if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
