@@ -29,3 +29,4 @@ conda install -y -c bioconda -c conda-forge bioconda-utils
 conda install -y conda-build anaconda-client
 pip install -U git+git://github.com/gogetdata/ggd-cli.git
 conda install -y "gsort>=0.0.2" samtools htslib zlib
+conda update -y conda-build
