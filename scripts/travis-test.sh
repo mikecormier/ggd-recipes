@@ -46,11 +46,15 @@ echo "Checked Dependencies"
 echo "############################################################"
 echo "############################################################"
 
+ls $CHECK_DIR
+
 for bz2 in $CHECK_DIR/*.bz2; do
 	if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
+        echo "$(basename $bz2)"
         continue
     fi
 	if [[ "$(basename $bz2)" == "*.bz2" ]]; then
+        echo "$(basename $bz2)"
 		continue
 	fi
 
@@ -59,6 +63,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
 	echo "Checking recipe" $(basename $bz2)
 	echo "############################################################"
 	echo "############################################################"
+    echo "UPLOAD"
 	ggd check-recipe $bz2
 
 	# upload
