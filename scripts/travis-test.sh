@@ -11,7 +11,7 @@ CONDA_ROOT=$(conda info --root)
 rm -rf $CONDA_ROOT/conda-bld/*
 
 #CHECK_DIR=$TMPDIR/builds.$$/
-CHECK_DIR=$CONDA_ROOT/conda-bld/*/*/
+CHECK_DIR=$CONDA_ROOT/conda-bld/*
 echo $CHECK_DIR
 rm -rf $CHECK_DIR
 mkdir -p $CHECK_DIR
