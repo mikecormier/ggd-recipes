@@ -62,7 +62,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
     echo $bz2
 	anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
     echo "UPLOADED"
-	ggd check-recipe $bz2
+#	ggd check-recipe $bz2
 
 	# upload
 	set +o nounset
