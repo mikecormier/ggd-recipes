@@ -12,10 +12,10 @@ Please see the design.md document in this directory
 
 For any comments / issues or to be added to the project, open an issue or email bpederse@gmail.com
 
-You can use the recipes from this repo using the [ggd-alpha channel](https://anaconda.org/ggd-alpha/) from anaconda.org, e.g:
+You can use the recipes from this repo using the [ggd-dev channel](https://anaconda.org/ggd-dev/) from anaconda.org, e.g:
 
 ```
-conda install -c ggd-alpha hg19-dbsnp
+conda install -c ggd-dev hg19-dbsnp
 ```
 
 **NOTE**: many recipes will depend on software in [bioconda](https://github.com/bioconda/bioconda-recipes) so please use: 
@@ -91,7 +91,7 @@ git push brentp cpg-islands
 
 Once the tests are done running (and passing), gogetdata members
 can merge the pull-request. At that time, it will be added to the
-`ggd-alpha` channel on anaconda.org.
+`ggd-dev` channel on anaconda.org.
 
 
 ## Recipe Requirements
