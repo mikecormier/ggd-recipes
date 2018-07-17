@@ -35,12 +35,12 @@ bioconda-utils build recipes/Mus_musculus/mm10/ config.yaml
 # Canis_familiaris
 #bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml  
 
-pwd $CONDA_ROOT/conda-bld/
-for file in $CONDA_ROOT/conda-bld/*; do
+newFile1="$CONDA_ROOT/conda-bld/*"
+for file in $newFile1; do
     echo $file
 done
-pwd $CONDA_ROOT/conda-bld/*
-for file in $CONDA_ROOT/conda-bld/*/*; do
+newFile2="$CONDA_ROOT/conda-bld/*/*"
+for file in $newFile2; do
     echo $file
 done 
 
