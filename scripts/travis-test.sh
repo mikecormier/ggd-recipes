@@ -41,7 +41,12 @@ bioconda-utils build recipes/Mus_musculus/mm10/ config.yaml
 # Canis_familiaris
 #bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml  
 
-printenv
+pwd $CONDA_Root/conda-bld/
+for file in $CONDA_ROOT/conda-bld/*
+    echo $file
+pwd $CONDA_Root/conda-bld/*
+for file in $CONDA_ROOT/conda-bld/*/*
+    echo $file
 
 #ls /anaconda/conda-bld/noarch/
 #pwd $CHECK_DIR
