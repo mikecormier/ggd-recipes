@@ -6,19 +6,13 @@ set -eo pipefail -o nounset
 
 
 export PATH=/anaconda/bin:$PATH
-#check-sort-order --help
 conda install htslib gsort
-#gsort --help
 
 
 CONDA_ROOT=$(conda info --root)
 rm -rf $CONDA_ROOT/conda-bld/*
 
-
 CHECK_DIR=$TMPDIR/builds.$$/
-pwd $CHECK_DIR
-
-
 rm -rf $CHECK_DIR
 mkdir -p $CHECK_DIR
 
@@ -42,15 +36,15 @@ bioconda-utils build recipes/Mus_musculus/mm10/ config.yaml
 #bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml  
 
 pwd $CONDA_Root/conda-bld/
-for file in $CONDA_ROOT/conda-bld/*
+for file in $CONDA_ROOT/conda-bld/*; do
     echo $file
+done
 pwd $CONDA_Root/conda-bld/*
-for file in $CONDA_ROOT/conda-bld/*/*
+for file in $CONDA_ROOT/conda-bld/*/*; do
     echo $file
+done 
 
 #ls /anaconda/conda-bld/noarch/
-#pwd $CHECK_DIR
-#ls $CHECK_DIR
 
 echo "############################################################"
 echo "############################################################"
