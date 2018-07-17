@@ -40,10 +40,12 @@ echo "> $newFile1"
 for file in $newFile1; do
     echo $file
 done
-echo "> $newFile2"
+
 newFile2="$CONDA_ROOT/conda-bld/*/*"
+echo "> $newFile2"
 for file in $newFile2; do
-    echo $file
+    pwd
+    echo -e "$file \n"
 done 
 
 #ls /anaconda/conda-bld/noarch/
