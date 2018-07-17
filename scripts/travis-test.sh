@@ -11,14 +11,8 @@ conda install htslib gsort
 #gsort --help
 
 
-
 CONDA_ROOT=$(conda info --root)
 rm -rf $CONDA_ROOT/conda-bld/*
-
-echo -e "\n$CONDA_ROOT"
-ls $CONDA_ROOT/conda-bld/*
-echo -e "\n"
-ls $CONDA_ROOT/conda-bld/*/*
 
 
 CHECK_DIR=$TMPDIR/builds.$$/
@@ -47,9 +41,11 @@ bioconda-utils build recipes/Mus_musculus/mm10/ config.yaml
 # Canis_familiaris
 #bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml  
 
-ls /anaconda/conda-bld/noarch/
-pwd $CHECK_DIR
-ls $CHECK_DIR
+printenv
+
+#ls /anaconda/conda-bld/noarch/
+#pwd $CHECK_DIR
+#ls $CHECK_DIR
 
 echo "############################################################"
 echo "############################################################"
