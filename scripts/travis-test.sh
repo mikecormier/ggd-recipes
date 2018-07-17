@@ -1,7 +1,5 @@
 #!/bin/bash
 
-TMPDIR=${TMPDIR:-/tmp/}
-
 set -eo pipefail -o nounset
 
 
@@ -12,7 +10,9 @@ conda install htslib gsort
 CONDA_ROOT=$(conda info --root)
 rm -rf $CONDA_ROOT/conda-bld/*
 
-CHECK_DIR=$TMPDIR/builds.$$/
+#CHECK_DIR=$TMPDIR/builds.$$/
+CHECK_DIR=$CONDA_ROOT/conda-bld/*/*/
+echo $CHECK_DIR
 rm -rf $CHECK_DIR
 mkdir -p $CHECK_DIR
 
@@ -35,19 +35,6 @@ bioconda-utils build recipes/Homo_sapiens/GRCh37/ config.yaml #--loglevel debug
 # Canis_familiaris
 #bioconda-utils build recipes/Canis_familiaris/canFam3/ config.yaml  
 
-newFile1="$CONDA_ROOT/conda-bld/*"
-echo "> $newFile1"
-for file in $newFile1; do
-    echo $file
-done
-
-newFile2="$CONDA_ROOT/conda-bld/*/*"
-echo "> $newFile2"
-for file in $newFile2; do
-    pwd
-    echo -e "$file \n"
-done 
-
 #ls /anaconda/conda-bld/noarch/
 
 echo "############################################################"
@@ -58,11 +45,11 @@ echo "############################################################"
 
 for bz2 in $CHECK_DIR/*.bz2; do
 	if [[ "$(basename $bz2)" == "repodata.json.bz2" ]]; then
-        echo "$(basename $bz2)"
+        echo ">repodata.json.bze"
         continue
     fi
 	if [[ "$(basename $bz2)" == "*.bz2" ]]; then
-        echo "$(basename $bz2)"
+        echo ">*.bz2"
 		continue
 	fi
 
@@ -72,6 +59,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
 	echo "############################################################"
 	echo "############################################################"
     echo "UPLOAD"
+    echo $bz2
 	ggd check-recipe $bz2
 
 	# upload
