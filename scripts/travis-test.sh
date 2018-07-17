@@ -60,6 +60,8 @@ for bz2 in $CHECK_DIR/*.bz2; do
 	echo "############################################################"
     echo "UPLOAD"
     echo $bz2
+	anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+    echo "UPLOADED"
 	ggd check-recipe $bz2
 
 	# upload
@@ -71,7 +73,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
 			echo "\n> WARNING:"
 			echo '> $ANACONDA_GGD_TOKEN not set'
 		else
-			anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
+#			anaconda -t $ANACONDA_GGD_TOKEN upload $bz2
             echo "DONE"
 		fi
 	fi
