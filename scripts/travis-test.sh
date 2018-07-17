@@ -15,9 +15,14 @@ conda install htslib gsort
 CONDA_ROOT=$(conda info --root)
 rm -rf $CONDA_ROOT/conda-bld/*
 
+echo -e "\n$CONDA_ROOT"
+ls $CONDA_ROOT/conda-bld/*
+echo -e "\n"
+ls $CONDA_ROOT/conda-bld/*/*
+
+
 CHECK_DIR=$TMPDIR/builds.$$/
 pwd $CHECK_DIR
-$$
 
 
 rm -rf $CHECK_DIR
