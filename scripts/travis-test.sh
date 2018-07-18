@@ -60,7 +60,7 @@ for bz2 in $CHECK_DIR/*.bz2; do
 	echo "############################################################"
     echo "UPLOAD"
     echo $bz2
-#    echo $ANACONDA_GGD_TOKEN
+    echo $ANACONDA_GGD_TOKEN
 	anaconda upload --user ggd-alpha -t $ANACONDA_GGD_TOKEN $bz2
     echo "UPLOADED"
 #	ggd check-recipe $bz2
