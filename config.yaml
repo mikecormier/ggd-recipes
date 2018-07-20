@@ -1,0 +1,10 @@
+#Modified from bioconda-recipes (https://github.com/bioconda/bioconda-recipes/blob/master/config.yml) and (https://github.com/bioconda
+env_matrix: "scripts/env_matrix.yaml"
+
+##  No current blacklist 
+   
+channels:
+    - ggd-alpha
+    - bioconda
+    - conda-forge
+    - defaults
