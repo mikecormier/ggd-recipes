@@ -26,7 +26,7 @@ trap rmbuild EXIT
 ## bioconda-utils build (biconda-utils/utils.py get_recipes only supports two levels of nesting. !!Checking if the bicondoa team can change this!!)
 ##  Therefore, in order to test all recieps we have to run each species/build seperately 
 # Homo-sapien
-bioconda-utils build recipes/Homo_sapiens/GRCh37/ config.yaml #--loglevel debug 
+bioconda-utils build recipes/Homo_sapiens/GRCh37/ config.yaml --loglevel debug 
 #bioconda-utils build recipes/Homo_sapiens/hg19/ config.yaml 
 #bioconda-utils build recipes/Homo_sapiens/hg38-noalt/ config.yaml 
 #bioconda-utils build recipes/Homo_sapiens/hg38/ config.yaml 
@@ -60,9 +60,14 @@ for bz2 in $CHECK_DIR/*.bz2; do
 	echo "############################################################"
     echo "UPLOAD"
     echo $bz2
-    echo $ANACONDA_GGD_TOKEN
-	anaconda upload --user ggd-alpha -t $ANACONDA_GGD_TOKEN $bz2
-    echo "UPLOADED"
+	if [[ "$ANACONDA_GGD_TOKEN" == "" ]]; then
+		echo "\n> WARNING:"
+		echo '> $ANACONDA_GGD_TOKEN not set'
+    else
+	    anaconda upload --user ggd-alpha -t $ANACONDA_GGD_TOKEN $bz2
+        echo "UPLOADED"
+    fi
+
 #	ggd check-recipe $bz2
 
 	# upload
