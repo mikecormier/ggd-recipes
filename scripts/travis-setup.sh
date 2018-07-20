@@ -26,8 +26,8 @@ conda install -y git pip gitpython
 
 ## Install bioconda-utils (https://github.com/bioconda/bioconda-recipes/blob/master/.circleci/setup.sh)
 #conda install -y -c bioconda -c conda-forge bioconda-utils
-conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/cb3-migration/bioconda_utils/bioconda_utils-requirements.txt
-pip install git+https://github.com/bioconda/bioconda-utils.git@cb3-migration 
+conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/master/bioconda_utils/bioconda_utils-requirements.txt
+pip install git+https://github.com/bioconda/bioconda-utils.git
 
 conda install -y conda-build anaconda-client
 pip install -U git+git://github.com/gogetdata/ggd-cli.git
