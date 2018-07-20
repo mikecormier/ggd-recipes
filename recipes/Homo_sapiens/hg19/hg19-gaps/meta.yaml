@@ -3,7 +3,8 @@ about:
 build:
   binary_relocation: false
   detect_binary_files_with_prefix: false
-  number: 0
+  noarch: generic
+  number: 1
 extra:
   authors: arq
   extra-files: []
