@@ -51,7 +51,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     conda install -y --file https://raw.githubusercontent.com/bioconda/bioconda-utils/master/bioconda_utils/bioconda_utils-requirements.txt
     pip install git+https://github.com/bioconda/bioconda-utils.git
     ## Install ggd-cli
-    pip install -U git+git://github.com/gogetdata/ggd-cli.git
+    #pip install -U git+git://github.com/gogetdata/ggd-cli.git
+    pip install -U git+git://github.com/gogetdata/ggd-cli.git@mikec-update # Temp use mikec-update branch
 
 
     # step 5: cleanup
