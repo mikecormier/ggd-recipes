@@ -36,7 +36,7 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
 
     # step 2: setup channels
     conda config --system --add channels defaults
-    conda config --system --add channels ggd-dev
+    conda config --system --add channels ggd-genomics
     conda config --system --add channels conda-forge
     conda config --system --add channels bioconda
 
@@ -52,7 +52,8 @@ if [[ ! -d $WORKSPACE/anaconda ]]; then
     pip install git+https://github.com/bioconda/bioconda-utils.git
     ## Install ggd-cli
     #pip install -U git+git://github.com/gogetdata/ggd-cli.git
-    pip install -U git+git://github.com/gogetdata/ggd-cli.git@mikec-update # Temp use mikec-update branch
+    #pip install -U git+git://github.com/gogetdata/ggd-cli.git@mikec-update # Temp use mikec-update branch
+    pip install -U git+git://github.com/mikecormier/ggd-cli # Temp use mikecormier ggd-cli 
 
 
     # step 5: cleanup
